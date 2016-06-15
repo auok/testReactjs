@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>添加留言板</title>
+    <style>
+      *{ margin:0;padding:0;  }
+      .conter{ width:1000px;margin:0 auto; }
+    </style>
+  </head>
+  <body>
+  
+     <div id="app"></div>
+        <!-- var CommentBox = React.createClass({
+      getInitialState : function(){
+         return {data: []};
+      },
+      render: function() {
+        return (
+          <div className="commentBox">
+            <div>
+              {this.props.title} I am a CommentBox.
+            </div>
+            <ReactUlist { ...this.props }/>
+          </div>
+        );
+      }
+    });
+    
+    
+  
+    React.render(
+      <CommentBox {...a} />,
+      document.getElementById('app')
+    ); -->
+    <script src="build/react.js"></script>
+    <script src="build/JSXTransformer.js"></script>
+    <script type="text/jsx">
+
+     var CommentBox = React.createClass({
+      getInitialState : function(){
+         return {data: []};
+      },
+      render: function() {
+        return (
+          <div className="conter">
+            <div>
+              <input type="text" value="请输入留言内容" />
+              <input type="button" value="提交" onClick={this.clickFn}  />
+            </div>
+           
+          </div>
+        );
+      },
+      clickFn : function(){
+        alert(1);
+      }
+    });
+    
+    React.render(
+      <CommentBox />,
+      document.getElementById('app'),
+      function(){
+        console.log('我只是一个安静的回调函数');
+      }
+    );
+    
+  </script>
+
+  </body>
+</html>

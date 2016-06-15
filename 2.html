@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>添加留言板</title>
+    <style>
+      *{ margin:0;padding:0;  }
+      .conter{ width:1000px;margin:0 auto; }
+      .txt{ display: none;  }
+    </style>
+  </head>
+  <body>
+  
+     <div id="app"></div>
+        <!-- var CommentBox = React.createClass({
+      getInitialState : function(){
+         return {data: []};
+      },
+      render: function() {
+        return (
+          <div className="commentBox">
+            <div>
+              {this.props.title} I am a CommentBox.
+            </div>
+            <ReactUlist { ...this.props }/>
+          </div>
+        );
+      }
+    });
+    
+    
+  
+    React.render(
+      <CommentBox {...a} />,
+      document.getElementById('app')
+    ); -->
+    <script src="build/react.js"></script>
+    <script src="build/JSXTransformer.js"></script>
+    <script type="text/jsx">
+
+     var CommentBox = React.createClass({
+      getInitialState : function(){
+         return {data: []};
+      },
+      render: function() {
+        return (
+          <div className="conter">
+            
+              
+              <input type="button" value={ this.props.inputName } onClick={this.clickFn}  />
+              <div className="txt">
+                { this.props.txt }
+              </div>
+           
+          </div>
+        );
+      },
+      clickFn : function(){
+        alert(1);
+      }
+    });
+    
+    var json = {
+      inputName : '显示',
+      txt : '显示的文字'
+    }
+
+    React.render(
+      <CommentBox { ...json }/>,
+      document.getElementById('app'),
+      function(){
+        console.log('我只是一个安静的回调函数');
+      }
+    );
+    
+  </script>
+
+  </body>
+</html>
