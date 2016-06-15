@@ -20,7 +20,7 @@
      var CommentBox = React.createClass({
       getInitialState : function(){
          return {
-          totalChecked:false
+          totalChecked : false
          };
       },
       render: function() {
@@ -29,7 +29,7 @@
             
               
               <input type="button" value={ this.props.inputName } onClick={this.clickFn}  />
-              <div className="txt">
+              <div className="txt" id="text">
                 { this.props.txt }
               </div>
            
@@ -37,12 +37,19 @@
         );
       },
       clickFn : function(){
-        var change = !this.state.totalChecked;
 
 
-        this.setState({ totalChecked:change });
+        this.setState({ totalChecked:!this.state.totalChecked });
 
-        alert( this.state.totalChecked )
+        var oTxt = document.getElementById('text');
+
+        if( this.state.totalChecked ){
+          oTxt.style.display = 'none';
+        }else{
+          oTxt.style.display = 'block';
+        }
+       
+        //alert( this.state.totalChecked )
       }
     });
     
