@@ -5,7 +5,7 @@
     <title>添加留言板</title>
     <style>
       *{ margin:0;padding:0;  }
-      .conter{ width:1000px;margin:0 auto; }
+      .conter{ width:100px;margin:0 auto; }
       .txt{ display: none;  }
     </style>
   </head>
@@ -19,7 +19,9 @@
 
      var CommentBox = React.createClass({
       getInitialState : function(){
-         return {data: []};
+         return {
+          totalChecked:false
+         };
       },
       render: function() {
         return (
@@ -35,7 +37,12 @@
         );
       },
       clickFn : function(){
-        alert(1);
+        var change = !this.state.totalChecked;
+
+
+        this.setState({ totalChecked:change });
+
+        alert( this.state.totalChecked )
       }
     });
     
